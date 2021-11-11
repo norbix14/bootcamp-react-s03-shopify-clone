@@ -69,7 +69,6 @@ button {
 /* presentation */
 .presentation {
   background-color: var(--bg-indigo);
-  height: 100vh;
   padding: 10px 50px;
 }
 
@@ -154,7 +153,21 @@ a:focus {
 
 .drop-item li:first-child {
   margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.drop-item li:first-child::after {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  bottom: -0.5rem;
+  height: 1px;
+  width: calc(100% - 2rem);
+  background-color: #a7a9aa;
+}
+
+.drop-item li:nth-child(2) {
+  margin-top: 16px;
 }
 
 .drop-item li:hover {
@@ -176,7 +189,7 @@ a:focus {
 
 /* menu */
 .img-shop {
-  width: 150px;
+  width: 140px;
   color: #fff;
 }
 
@@ -191,14 +204,16 @@ a:focus {
 .video {
   width: 50%;
   color: #fff;
+  padding: 20px;
 }
 
 .description h2 {
-  font-size: 3.5rem;
+  font-size: 4rem;
 }
 
 .description > p {
   margin: 20px auto;
+  font-size: 1.2rem;
 }
 
 .btn-talk {
@@ -218,4 +233,10 @@ a:focus {
 
 .video-intro {
   width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  .presentation {
+    height: 100vh;
+  }
 }
